@@ -27,3 +27,17 @@ jobs:
         name: "Setup Python"
         with:
           python_version: "3.9"
+
+      - name: "Install dependencies"
+        run: "pip install -U pip requests lxml"
+
+      - name: "Scrapy scrap"
+        run: "python happykaktus.py"
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHATID: ${{ secrets.TELEGRAM_CHATID }}
+
+      - name: "Commit last state"
+        run: |
+          git add lastitem.html
+          git commit -m "Update last item (autocommit)"
