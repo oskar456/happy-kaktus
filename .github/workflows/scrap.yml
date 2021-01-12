@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v2
         name: "Setup Python"
         with:
-          python_version: "3.9"
+          python-version: "3.9"
 
       - name: "Install dependencies"
         run: "pip install -U pip requests lxml"
@@ -43,3 +43,4 @@ jobs:
           git config user.email "robot@github.invalid"
           git add lastitem.html || true
           git commit -m "Update last item (autocommit)" || true
+          git push
