@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  scrap:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -39,5 +39,7 @@ jobs:
 
       - name: "Commit last state"
         run: |
-          git add lastitem.html
-          git commit -m "Update last item (autocommit)"
+          git config user.name "GitHub Action"
+          git config user.email "robot@github.invalid"
+          git add lastitem.html || true
+          git commit -m "Update last item (autocommit)" || true
