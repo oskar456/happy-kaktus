@@ -35,7 +35,7 @@ jobs:
         run: "python happykaktus.py"
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHATID: ${{ secrets.TELEGRAM_CHATID }}
+          TELEGRAM_CHATID: "@kvetinac"
 
       - name: "Commit last state"
         run: |
