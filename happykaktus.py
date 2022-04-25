@@ -32,8 +32,8 @@ def get_last_newsitem():
     news = doc.find('//div[@class="journal-content-article"]')
     if news is None:
         raise ValueError("No news found")
-    if len(news) > 1: 
-        news.remove(news[-1]) # Odstraň poslední odstavec
+    # if len(news) > 1:
+    #     news.remove(news[-1]) # Odstraň poslední odstavec
     return news
 
 
