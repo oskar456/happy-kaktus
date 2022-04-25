@@ -48,7 +48,7 @@ def load_saved_newsitem():
 
 
 def render_html(news):
-    return "<b>{}</b>\n{}".format(news[0][0].text_content(), "".join(n.text_content().strip() for n in news[0][1:-1]))
+    return "<b>{}</b>\n{}".format(news[0][0].text_content(), "".join(n.text_content().strip() for n in news[0][1:]))
 
 
 def main():
