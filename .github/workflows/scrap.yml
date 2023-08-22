@@ -5,7 +5,7 @@ name: Scrap
 # Controls when the action will run. 
 on:
   schedule:
-    - cron: "15 12-18 * * 2,4"
+    - cron: "15,35 12-18 * * 1-5"
     - cron: "55 12-18 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
@@ -24,15 +24,15 @@ jobs:
         run: date
         env:
           TZ: Europe/Prague
-        
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         name: "Checkout repository"
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         name: "Setup Python"
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - name: "Install dependencies"
         run: "pip install -U pip requests lxml"
