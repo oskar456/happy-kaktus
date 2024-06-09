@@ -29,7 +29,7 @@ def get_last_newsitem():
     url = "https://www.mujkaktus.cz/novinky"
     s = requests.Session()
     doc = lxml.html.parse(StringIO(s.get(url).text))
-    news = doc.find('//div[@class="journal-content-article"]')
+    news = doc.find('.//div[@class="journal-content-article"]')
     if news is None:
         raise ValueError("No news found")
     # if len(news) > 1:
