@@ -26,10 +26,10 @@ jobs:
           TZ: Europe/Prague
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@main
         name: "Checkout repository"
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@main
         name: "Setup Python"
         with:
           python-version: "3.11"
