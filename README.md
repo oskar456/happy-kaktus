@@ -1,5 +1,9 @@
 ![Scrap](https://github.com/oskar456/happy-kaktus/workflows/Scrap/badge.svg)
 # happy-kaktus
+
+**As of June 2025, there are no news on the website anymore. Pull requests to
+fix this are welcome.**
+
 Scrap news from `mujkaktus.cz` and publish them on a Telegram channel
 
 This script is periodically run by a GitHub action and whenever
