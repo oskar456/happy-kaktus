@@ -25,8 +25,11 @@ def send_telegram_message(message):
         "chat_id":telegram_group_name,
         "text": message,
         "parse_mode": "HTML",
+        "link_preview_options": {
+            "is_disabled": True,
+        },
     }
-    r = requests.post(url, data=payload).json()
+    r = requests.post(url, json=payload).json()
     if not r["ok"]:
         print(r)
         raise RuntimeError("Telegram error")
@@ -48,7 +51,7 @@ def load_last_link() -> str:
         return STATE_FILE.read_text().strip()
     except FileNotFoundError:
         return ""
-    
+
 def download_pdf(session: requests.Session, url: str) -> bytes:
     resp = session.get(url, timeout=60)
     resp.raise_for_status()
