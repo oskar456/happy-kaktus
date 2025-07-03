@@ -117,15 +117,18 @@ def main():
         message = (
             "🔔 <b>Dobíječka je tady!</b>\n\n"
             f"{dt_range}\n\n"
-            f"Stáhnout podmínky: {pdf_link}"
+            f"<a href=\"{KAKTUS_DOBIJECKA_URL}\">Více informací</a>"
+            " | "
+            f"<a href=\"{pdf_link}\">Podmínky v PDF</a>"
         )
     except Exception:
         # fallback notification when we can’t find the time in PDF
         message = (
-            "🔔 <b>Dobíječka je tady!</b>\n\n"
-            "Pro přesný čas navštivte prosím web nebo Facebook Kaktusu, "
-            "případně si ho ověřte v PDF podmínkách akce.\n\n"
-            f"Podmínky ke stažení: {pdf_link}"
+            "🔔 <b>Dnes bude asi dobíječka!</b>\n\n"
+            "Nepodařilo se ale zjistit přesný čas.\n\n"
+            f"<a href=\"{KAKTUS_DOBIJECKA_URL}\">Více informací</a>"
+            " | "
+            f"<a href=\"{pdf_link}\">Podmínky v PDF</a>"
         )
 
     # 6) Send the notification
