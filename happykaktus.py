@@ -62,18 +62,19 @@ def save_last_link(link: str):
 
 def extract_datetime_range(text: str) -> str:
     regex = re.compile(
+        r'od\s*'
         r'(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})'  # start date
         r'\s+od\s+'
         r'(\d{1,2}:\d{2})\s*hod\.\s*'
         r'do\s*'
         r'(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})\s*'  # end date
-        r'(\d{1,2}:\d{2})\s*hod',
+        r'(\d{1,2}:\d{2})\s*hod\.',
         flags=re.IGNORECASE,
     )
     m = regex.search(text)
     if not m:
         raise ValueError("Date/time range not found in PDF text")
-    return m.group(0)
+    return m.group(0).replace('\n', '')
 
 def main():
     session = get_session_with_cookies()
@@ -116,7 +117,7 @@ def main():
         # build the detailed notification
         message = (
             "🔔 <b>Dobíječka je tady!</b>\n\n"
-            f"{dt_range}\n\n"
+            f"Nabídka platí {dt_range}\n\n"
             f"<a href=\"{KAKTUS_DOBIJECKA_URL}\">Více informací</a>"
             " | "
             f"<a href=\"{pdf_link}\">Podmínky v PDF</a>"
