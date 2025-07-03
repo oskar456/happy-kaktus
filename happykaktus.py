@@ -127,12 +127,12 @@ def main():
     # 6) Send the notification
     try:
         send_telegram_message(message)
-        print("Notification sent.")
     except Exception as e:
         print(f"[ERROR] Telegram send failed: {e}")
-
-    # 8) Save link so we don't resend
-    save_last_link(pdf_link)
+    else:
+        print("Notification sent.")
+        # 8) Save link so we don't resend - only when Telegram didn't fail
+        save_last_link(pdf_link)
 
 if __name__ == "__main__":
     main()
