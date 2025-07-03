@@ -1,12 +1,16 @@
 ![Scrap](https://github.com/oskar456/happy-kaktus/workflows/Scrap/badge.svg)
 # happy-kaktus
 
-**As of June 2025, there are no news on the website anymore. Pull requests to
-fix this are welcome.**
-
-Scrap news from `mujkaktus.cz` and publish them on a Telegram channel
+Scrap news about `mujkaktus.cz` *happy hours* and publish them on a Telegram channel
 
 This script is periodically run by a GitHub action and whenever
-there is some new news on the website, it republishes it into a [Telegram channel](https://t.me/kvetinac).
+there seems to be a new happy hours event happening, it sends a message
+into a [Telegram channel](https://t.me/kvetinac).
 
-The purpose is to find out when do the *happy hours* occur. In general, they occur twice per month, around 8th and 23th, between 17 and 20 hours.
+In general, the happy hours occur twice per month, around 8th and 23th,
+between 17 and 20 hours.
+
+## Thanks
+
+The current version of scrapper was contributed by
+[@MR-KOKOS](https://github.com/oskar456/happy-kaktus/pull/3).
