@@ -47,6 +47,6 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "robot@github.invalid"
-          git add lastitem.html || true
+          git add lastlink.txt || true
           git commit -m "Update last item (autocommit)" || true
           git push
