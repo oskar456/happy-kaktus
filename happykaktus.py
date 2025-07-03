@@ -90,10 +90,11 @@ def main():
     raw_href = anchors[0].get("href")
     pdf_link = urljoin(KAKTUS_DOBIJECKA_URL, raw_href)
 
-    # 2) Validate link format
-    if not link_matches_pattern(pdf_link):
-        print(f"[ERROR] Link does not match expected PDF pattern: {pdf_link}")
-        return
+    # Skipping this for now, it seems superfluous and fragile to OC
+    ## 2) Validate link format
+    #if not link_matches_pattern(pdf_link):
+    #    print(f"[ERROR] Link does not match expected PDF pattern: {pdf_link}")
+    #    return
 
     # 3) Check for new link
     last = load_last_link()
