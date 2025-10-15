@@ -5,8 +5,8 @@ name: Scrap
 # Controls when the action will run. 
 on:
   schedule:
-    - cron: "15,35 12-18 * * 1-5"
-    - cron: "55 12-18 * * *"
+    - cron: "15,35 11-17 * * 1-5"
+    - cron: "55 11-17 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
