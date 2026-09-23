@@ -1,4 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "requests",
+#     "lxml",
+#     "pdfminer.six",
+# ]
+# ///
+
 import os
 import re
 from datetime import datetime
