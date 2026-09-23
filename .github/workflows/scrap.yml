@@ -36,6 +36,8 @@ jobs:
 
       - uses: astral-sh/setup-uv@main
         name: "Setup uv"
+        with:
+          cache-dependency-glob: happykaktus.py
 
       - name: "Scrapy scrap"
         run: "uv run happykaktus.py"
